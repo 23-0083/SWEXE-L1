@@ -1,5 +1,16 @@
 <h1>ゲーム登録</h1>
 
+<% if @game.errors.any? %>
+  <div>
+    <h2>入力エラー</h2>
+    <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: @game do |form| %>
   <div>
     <%= form.label :title, "タイトル" %>
