@@ -1,36 +1,7 @@
+
 <h1>ゲーム編集</h1>
 
-<% if @game.errors.any? %>
-  <div>
-    <h2>入力エラー</h2>
-    <ul>
-      <% @game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_with model: @game do |form| %>
-  <div>
-    <%= form.label :title, "タイトル" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :genre, "ジャンル" %>
-    <%= form.text_field :genre %>
-  </div>
-
-  <div>
-    <%= form.label :rating, "評価" %>
-    <%= form.number_field :rating %>
-  </div>
-
-  <div>
-    <%= form.submit "更新" %>
-  </div>
-<% end %>
+<%= render "form", game: @game %>
 
 <%= link_to "詳細に戻る", game_path(@game) %>
 <%= link_to "一覧に戻る", games_path %>
