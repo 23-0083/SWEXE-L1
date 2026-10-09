@@ -45,7 +45,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Use Active Storage variants
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 2.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
